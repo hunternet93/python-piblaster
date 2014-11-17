@@ -15,10 +15,9 @@ class PiBlaster:
 
     def __init__(self):
         try:
-#            self.device = open('/dev/piblaster', 'w')
-#            self.device = open('/dev/null', 'w')
-            import sys
-            self.device = sys.stdout
+            self.device = open('/dev/piblaster', 'w')
+#            import sys
+#            self.device = sys.stdout
         except FileNotFoundError:
             raise PiBlasterError('Could not open /dev/piblaster. Please make sure piblaster is installed and operational.')
         except PermissionError:
